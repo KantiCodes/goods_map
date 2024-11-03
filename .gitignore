@@ -1,5 +1,6 @@
 # My stuff
 .vscode
+odb-examples*
 
 # Prerequisites
 *.d
