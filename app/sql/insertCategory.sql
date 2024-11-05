@@ -1,0 +1,3 @@
+INSERT INTO  TABLE CATEGORY VALUES (
+    name = ?
+)
