@@ -11,3 +11,9 @@ and the second one is a specific way of pointing to an invalid memory address.
 
 - I had to free the `errorMsg` that I pass to `sqlite3_exec` method since (aparently) C level code uses `malloc` that I don't know yet what stands for but I assume `manual_allocation`. Since the `malloc` is used, then that
 memory address gets handed over to user (me and my c++ code). So I need to dereference it after using
+
+# 2024.05.11
+Laying out file structure and learning to use `fstream` to load sqlCommands in files ->
+
+## Next steps:
+Paramterized CRUD queries
