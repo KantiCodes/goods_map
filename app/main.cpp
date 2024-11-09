@@ -1,37 +1,44 @@
 #include <sqlite3.h>
 #include <iostream>
-#include "objects.cpp"
 #include <fstream>
 #include "constants.cpp"
 #include "databaseCreator.cpp"
+#include <sstream>
+#include <fmt/core.h>
 
-static char* dbName = "test.db";
+std::string result = "";
+
+
+template <typename... Strings>
+std::string* buildInsertQuery(Strings... strings) {
+    std::cout << "entered result" << std::endl;
+    ((result += " " + strings), ...);
+    return &result;  
+}
+
 
 int main () {
 
-    initializeGlobals();
+    // initializeGlobals();
 
-    std::cout << createCategorySql;
-    std::cout << createPlaceSql;
-    std::cout << "printed";
+    auto a = fmt::format("{:s}", "I am not a number");
+    std::cout << a << std::endl;
+
+    std::string s1 = "Hello";
+    std::string s2 = "world";
+    std::string s3 = "from";
+    std::string s4 = "C++";
+
+    std::string *q1 = buildInsertQuery(s1, s2, s3);
+    std::cout << "&q1: " << q1 << std::endl;
+    std::string *q2 = buildInsertQuery(s1, s2, s3);
+    std::cout << "result is: " << (q1 == q2) << " " << std::endl;
+
+    std::cout << q1 << " == " << q2;
 
 
 
-    char* cc;
-    std::cout << "cc: "<<cc << std::endl;
-    std::cout << "No problems with couting null pointers";
 
-    sqlite3* database;
-    int result = sqlite3_open(dbName, &database);
-    
-    if (result != 0) {
-        std::cout << "Error when creating the database" << std::endl << "Closing the program";
-        exit(0);
-    }
-    else {
-        std::cout << "Succesfully connected to the datbase" << std::endl;
-    }
-
-    DatabaseCreator dbCreator(database);
-    dbCreator.createAll();
 }
+
+
