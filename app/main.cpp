@@ -17,6 +17,11 @@ std::string* buildInsertQuery(Strings... strings) {
 }
 
 
+class 
+
+
+
+
 int main () {
 
     // initializeGlobals();
