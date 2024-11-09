@@ -29,3 +29,11 @@ Sure I still get confused using pointers and references but the bottom line is, 
 - Learning/Creating Makefile to build my app easier.
 - Learning how to do functions that take a dynamic number of arguments: `Variadic templates` and  `std::string... something`
 Thank you Guido for making us not have to think about it in python.
+
+
+# 2024.11.09
+- Learning about:
+- - abstract claases
+- - virutal pure/virutal methods
+- - basics of inheritance   
+- made cheatsheet
